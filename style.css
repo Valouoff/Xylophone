@@ -7,11 +7,38 @@
 body {
     height: 100vh;
     width: 100%;
+    font-family: sans-serif;
 }
 
-.btnPlay {
-    border: none;
-    padding: 10px 30px;
+.mainContainerWelcome {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.mainContainerWelcome h1 {
+    font-size: 40px;
+}
+
+.mainContainerWelcome .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mainContainerWelcome .card {
+    width: 300px;
+    height: 230px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
     box-shadow: 0px 0px 10px 0px #FFF inset;
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #000;
@@ -21,13 +48,23 @@ body {
     transition: .3s;
 }
 
-.btnPlay:hover {
-    background: #a1a1a1;
-    color: white;
+.mainContainerWelcome .card:hover {
+    transform: translateY(-10px);
+}
+
+.mainContainerWelcome .card p {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.mainContainerWelcome .card img {
+    width: 100%;
 }
 
 .xylophoneScreen {
     text-align: center;
+    display: none;
+    overflow-y: hidden;
 }
 
 .titleScreen {
@@ -44,7 +81,7 @@ body {
     height: 645px;
     max-width: 1300px;
     padding: 20px 110px 20px 160px;
-    margin: 0 auto;
+    margin: 150px auto 0 auto;
 }
 
 .containerNote {
@@ -263,5 +300,432 @@ body {
     transform: translateX(-50%);
     color: white;
     font-size: 14px;
+    font-family: sans-serif;
+}
+
+.btnPlay {
+    border: none;
+    padding: 10px 30px;
+    box-shadow: 0px 0px 10px 0px #FFF inset;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0px #000;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btnPlay:hover {
+    background: #a1a1a1;
+    color: white;
+}
+
+/* Piano */
+
+.pianoScreen {
+    text-align: center;
+    display: none;
+    overflow-y: hidden;
+}
+
+.titlePianoScreen {
+    margin: 20px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.mainPianoContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1555px;
+    padding: 0 200px;
+    margin: 150px auto 0 auto;
+}
+
+.structureLeftPiano {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: url(image/bois.jpeg);
+    border-radius: 20px 0 20px 20px;
+    box-shadow: 4px -4px 7.3px 0px #000000 inset;
+}
+
+.structureRightPiano {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: url(image/bois.jpeg);
+    border-radius: 0 20px 20px 20px;
+    box-shadow: -4px -4px 7.3px 0px #000000 inset;
+}
+
+.structureTopPiano {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 255px;
+    border-radius: 20px 20px 0 0;
+    background: url(image/bois.jpeg);
+    z-index: -10;
+}
+
+.structureTopBottomNotePiano {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #000000, #00000000);
+}
+
+.ecranPiano {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 120px;
+    border: 10px solid black;
+    background: #005c68;
+}
+
+.paraNotePlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+}
+
+.containerPianoNote {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 250px 400px;
+    gap: 5px;
+    height: 100%;
+    padding-bottom: 2px;
+    overflow-x: scroll;
+}
+
+.notesPiano {
+    width: 100px;
+    height: 100%;
+    position: relative;
+    grid-row: 2 / 3;
+    border-radius: 0px 0px 10px 10px;
+    background: radial-gradient(197.28% 100% at 50% 0%, #E0E0E0 0%, #ffffff 100%);
+    box-shadow: 0px -20px 9.4px -7px #FFF inset;
+    box-shadow: 0px 0px 5px 0px #000;
+    cursor: pointer;
+}
+
+.notesPiano:hover {
+    background: #a1a1a1;
+}
+
+.noteDiesePiano {
+    width: 50px;
+    height: 100%;
+    position: relative;
+    grid-row: 1;
+    border-radius: 0px 0px 10px 10px;
+    background: radial-gradient(197.28% 100% at 50% 0%, #000000 0%, #555555 100%);
+    box-shadow: 0px -20px 9.4px -7px #FFF inset;
+    transform: translate(-53.5%, 255px);
+    box-shadow: 0px 0px 5px 0px #000;
+    cursor: pointer;
+}
+
+.noteDiesePiano:hover {
+    background: #000000;
+}
+
+.divNoteDiesePiano1 {
+    grid-column-start: 2;
+}
+
+.divNoteDiesePiano2 {
+    grid-column-start: 3;
+}
+
+.divNoteDiesePiano3 {
+    grid-column-start: 5;
+}
+
+.divNoteDiesePiano4 {
+    grid-column-start: 6;
+}
+
+.divNoteDiesePiano5 {
+    grid-column-start: 7;
+}
+
+.divNoteDiesePiano6 {
+    grid-column-start: 9;
+}
+
+.divNoteDiesePiano7 {
+    grid-column-start: 10;
+}
+
+.divNoteDiesePiano8 {
+    grid-column-start: 12;
+}
+
+.divNoteDiesePiano9 {
+    grid-column-start: 13;
+}
+
+.divNoteDiesePiano10 {
+    grid-column-start: 14;
+}
+
+.divNoteDiesePiano11 {
+    grid-column-start: 16;
+}
+
+.divNoteDiesePiano12 {
+    grid-column-start: 17;
+}
+
+.divNoteDiesePiano13 {
+    grid-column-start: 19;
+}
+
+.divNoteDiesePiano14 {
+    grid-column-start: 20;
+}
+
+.paraNotePiano {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.paraNoteDiesePiano {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.btnRetrun {
+    position: fixed;
+    top: 0;
+    border: none;
+    padding: 10px 30px;
+    box-shadow: 0px 0px 10px 0px #FFF inset;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0px 0px 5px 0px #000;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 100000;
+}
+
+.btnRetrun:hover {
+    background: #a1a1a1;
+    color: white;
+}
+
+.activePiano {
+    background: grey;
+}
+
+/* Batterie */
+
+.batterieScreen {
+    text-align: center;
+    display: none;
+    overflow-y: hidden;
+}
+
+.titleBatterieScreen {
+    margin: 20px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.mainBatterieContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1555px;
+    padding: 20px;
+    margin: 150px auto 0 auto;
+    border: 1px solid red;
+}
+
+.containerBatterieNote {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    height: 100%;
+    padding-bottom: 2px;
+    border: 1px solid red;
+}
+
+.notesBatterie {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    grid-row: 2 / 3;
+    border-radius: 100%;
+    box-shadow: 0px -20px 9.4px -7px #FFF inset;
+    box-shadow: 0px 0px 5px 0px #000;
+    cursor: pointer;
+}
+
+.notesBatterie:hover {
+    background: #a1a1a1;
+}
+
+.notesBatterie1 {
+    grid-column: 2;
+    grid-row: 1;
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie2 {
+    grid-column: 1;
+    grid-row: 3;
+    transform: translateY(-50%);
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie3 {
+    grid-column: 1;
+    grid-row: 2;
+    transform: translateY(-50%);
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie4 {
+    grid-column: 2;
+    grid-row: 4;
+    width: 50%;
+    aspect-ratio: 1 / 2;
+    border-radius: 0 308px 308px 0;
+    transform: translate(-105%, -50%);
+    background: #C88E32;
+    box-shadow: 0 -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie5 {
+    grid-column: 1;
+    grid-row: 4;
+    width: 50%;
+    aspect-ratio: 1 / 2;
+    border-radius: 308px 0 0 308px;
+    transform: translateY(-50%);
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie6 {
+    grid-column: 2;
+    grid-row: 3;
+    background: #afafaf;
+    border: 5px solid #9e5a5a;
+    box-shadow: -10px 10px 20px 0px #9e7575 inset;
+}
+
+.notesBatterie7 {
+    grid-column: 4;
+    grid-row: 3;
+    background: #afafaf;
+    border: 5px solid #9e5a5a;
+    box-shadow: -10px 10px 20px 0px #9e7575 inset;
+}
+
+.notesBatterie8 {
+    grid-column: 4;
+    grid-row: 1;
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie9 {
+    grid-column: 5;
+    grid-row: 2;
+    transform: translateY(-50%);
+    background: #C88E32;
+    box-shadow: 10px -10px 15.9px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.notesBatterie10 {
+    grid-column: 3;
+    grid-row: 3;
+    transform: translateY(-50%);
+    background: #2c2c2c;
+    border: 5px solid #3a3a3a;
+    box-shadow: -10px 10px 20px 0px #000000 inset;
+}
+
+.notesBatterie11 {
+    grid-column: 2;
+    grid-row: 2;
+    background: #2c2c2c;
+    border: 5px solid #3a3a3a;
+    box-shadow: -10px 10px 20px 0px #000000 inset;
+}
+
+.notesBatterie12 {
+    grid-column: 3;
+    grid-row: 2;
+    transform: translateY(-50%);
+    background: #2c2c2c;
+    border: 5px solid #3a3a3a;
+    box-shadow: -10px 10px 20px 0px #000000 inset;
+}
+
+.notesBatterie13 {
+    grid-column: 4;
+    grid-row: 2;
+    background: #2c2c2c;
+    border: 5px solid #3a3a3a;
+    box-shadow: -10px 10px 20px 0px #000000 inset;
+}
+
+.notesBatterie14 {
+    grid-column: 5;
+    grid-row: 3;
+    transform: translateY(50%);
+    background: #2c2c2c;
+    border: 5px solid #3a3a3a;
+    box-shadow: -10px 10px 20px 0px #000000 inset;
+}
+
+.paraNoteBatterie {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 20px;
     font-family: sans-serif;
 }

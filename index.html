@@ -2,11 +2,35 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Xylophone</title>
 </head>
 <body>
+
+    <div class="mainContainerWelcome">
+
+        <h1>INSTRUMENTS</h1>
+
+        <div class="cards">
+            <div id="card-1" class="card">
+                <p>Xylophone</p>
+                <img src="image/xylophone.png" alt="Xylophone">
+            </div>
+
+            <div id="card-2" class="card">
+                <p>Piano</p>
+                <img src="image/piano.png" alt="Piano">
+            </div>
+
+            <div id="card-3" class="card">
+                <p>Batterie</p>
+                <img src="image/piano.png" alt="Piano">
+            </div>
+        </div>
+    </div>
+
+    <!-- Note de Xylophone -->
+
     <audio id="B0"  src="instuments/Mallet Note/Mallet B0.wav"></audio>
     <audio id="C1"  src="instuments/Mallet Note/Mallet C1.wav"></audio>
     <audio id="Cd1" src="instuments/Mallet Note/Mallet CD1.wav"></audio>
@@ -62,12 +86,62 @@
     <audio id="B4" src="instuments/Mallet Note/Mallet B4.wav"></audio>
     <audio id="C5" src="instuments/Mallet Note/Mallet C5.wav"></audio>
 
+    <!-- Note de Piano -->
+
+    <audio id="PianoC5" src="instuments/piano/C5.wav"></audio>
+    <audio id="PianoCD5" src="instuments/piano/CD5.wav"></audio>
+    <audio id="PianoD5" src="instuments/piano/D5.wav"></audio>
+    <audio id="PianoDD5" src="instuments/piano/DD5.wav"></audio>
+    <audio id="PianoE5" src="instuments/piano/E5.wav"></audio>
+    <audio id="PianoF5" src="instuments/piano/F5.wav"></audio>
+    <audio id="PianoFD5" src="instuments/piano/FD5.wav"></audio>
+    <audio id="PianoG5" src="instuments/piano/G5.wav"></audio>
+    <audio id="PianoGD5" src="instuments/piano/GD5.wav"></audio>
+    <audio id="PianoA5" src="instuments/piano/A5.wav"></audio>
+    <audio id="PianoAD5" src="instuments/piano/AD5.wav"></audio>
+    <audio id="PianoB5" src="instuments/piano/B5.wav"></audio>
+
+    <audio id="PianoC6" src="instuments/piano/C6.wav"></audio>
+    <audio id="PianoCD6" src="instuments/piano/CD6.wav"></audio>
+    <audio id="PianoD6" src="instuments/piano/D6.wav"></audio>
+    <audio id="PianoDD6" src="instuments/piano/DD6.wav"></audio>
+    <audio id="PianoE6" src="instuments/piano/E6.wav"></audio>
+    <audio id="PianoF6" src="instuments/piano/F6.wav"></audio>
+    <audio id="PianoFD6" src="instuments/piano/FD6.wav"></audio>
+    <audio id="PianoG6" src="instuments/piano/G6.wav"></audio>
+    <audio id="PianoGD6" src="instuments/piano/GD6.wav"></audio>
+    <audio id="PianoA6" src="instuments/piano/A6.wav"></audio>
+    <audio id="PianoAD6" src="instuments/piano/AD6.wav"></audio>
+    <audio id="PianoB6" src="instuments/piano/B6.wav"></audio>
+
+    <audio id="PianoC7" src="instuments/piano/C7.wav"></audio>
+    <audio id="PianoCD7" src="instuments/piano/CD7.wav"></audio>
+    <audio id="PianoD7" src="instuments/piano/D7.wav"></audio>
+    <audio id="PianoDD7" src="instuments/piano/DD7.wav"></audio>
+    <audio id="PianoF7" src="instuments/piano/F7.wav"></audio>
+    <audio id="PianoG7" src="instuments/piano/G7.wav"></audio>
+    <audio id="PianoGD7" src="instuments/piano/GD7.wav"></audio>
+    <audio id="PianoA7" src="instuments/piano/A7.wav"></audio>
+    <audio id="PianoAD7" src="instuments/piano/AD7.wav"></audio>
+    <audio id="PianoB7" src="instuments/piano/B7.wav"></audio>
+
+    <!-- Note de Batterie -->
+
+    <audio id="China" src="instuments/batterie/China.wav"></audio>
+    <audio id="CrashL" src="instuments/batterie/CrashL.wav"></audio>
+    <audio id="CrashR" src="instuments/batterie/CrashR.wav"></audio>
+    <audio id="HihatClosed" src="instuments/batterie/HihatClosed.wav"></audio>
+    <audio id="HihatOpen" src="instuments/batterie/HihatOpen.wav"></audio>
+    <audio id="KdrumL" src="instuments/batterie/KdrumL.wav"></audio>
+    <audio id="KdrumR" src="instuments/batterie/KdrumR.wav"></audio>
+    <audio id="RideL" src="instuments/batterie/RideL.wav"></audio>
+    <audio id="RideR" src="instuments/batterie/RideR.wav"></audio>
+    <audio id="Snare" src="instuments/batterie/Snare.wav"></audio>
+    <audio id="Tom1" src="instuments/batterie/Tom1.wav"></audio>
+    <audio id="Tom2" src="instuments/batterie/Tom2.wav"></audio>
+    <audio id="Tom3" src="instuments/batterie/Tom3.wav"></audio>
+    <audio id="Tom4" src="instuments/batterie/Tom4.wav"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- B0 C1 C#1 D1 D#1 E1 F1 F#1 G1 G#1 A1 A#1 -->
-<!-- B1 C2 C#2 D2 D#2 E2 F2 F#2 G2 G#2 A2 A#2 -->
-<!-- B2 C3 C#3 D3 D#3 E3 F3 F#3 G3 G#3 A3 A#3 -->
-<!-- B3 C4 C#4 D4 D#4 E4 F4 F#4 G4 G#4 A4 A#4 -->
-<!-- B4 C5 -->

@@ -61,6 +61,11 @@ titleScreen.textContent = "Xylophone"
 titleScreen.classList.add('titleScreen')
 xylophoneScreen.append(titleScreen)
 
+const btnReturnXylo = document.createElement('div')
+btnReturnXylo.textContent = "Retour"
+btnReturnXylo.classList.add('btnRetrun')
+xylophoneScreen.append(btnReturnXylo)
+
 const mainContainer = document.createElement('div')
 mainContainer.classList.add('mainContainer')
 xylophoneScreen.append(mainContainer)
@@ -93,10 +98,10 @@ const containerNote = document.createElement('div')
 containerNote.classList.add('containerNote')
 mainContainer.append(containerNote)
 
-const btnPlaynote = document.createElement('button')
-btnPlaynote.textContent = "Jouer"
-btnPlaynote.classList.add('btnPlay')
-xylophoneScreen.append(btnPlaynote)
+const btnPlayNote = document.createElement('button')
+btnPlayNote.textContent = "Jouer"
+btnPlayNote.classList.add('btnPlay')
+xylophoneScreen.append(btnPlayNote)
 
 const baseHeight = 300;
 
@@ -130,7 +135,7 @@ notes[0].forEach((note, index) => {
         note.play();
     });
 
-    btnPlaynote.addEventListener('click', () => {
+    btnPlayNote.addEventListener('click', () => {
 
         for (let i = 0 ; i < 3 ; i++) {
             setTimeout(() => {
@@ -257,28 +262,767 @@ notes[1].forEach((notesDiese, index) => {
     });
 })
 
-// const keyMap = {
-//     'a': B0,
-//     'z': C1,
-//     'e': D1,
-//     'r': E1,
-//     't': F1,
-//     'y': G1,
-//     'u': A1
-// };
+// Piano
 
-// document.addEventListener('keydown', (event) => {
-//     const key = event.key.toLowerCase();
-//     const note = keyMap[key];
-//     if (note) {
-//         note.currentTime = 0;
-//         note.play();
-//         containerNote.children[[...note.parentNode.children].indexOf(note)].classList.add('active')
-//     }
-// });
+const PianoC5 = document.getElementById('PianoC5');
+const PianoD5 = document.getElementById('PianoD5');
+const PianoE5 = document.getElementById('PianoE5');
+const PianoF5 = document.getElementById('PianoF5');
+const PianoG5 = document.getElementById('PianoG5');
+const PianoA5 = document.getElementById('PianoA5');
+const PianoB5 = document.getElementById('PianoB5');
+const PianoC6 = document.getElementById('PianoC6');
+const PianoD6 = document.getElementById('PianoD6');
+const PianoE6 = document.getElementById('PianoE6');
+const PianoF6 = document.getElementById('PianoF6');
+const PianoG6 = document.getElementById('PianoG6');
+const PianoA6 = document.getElementById('PianoA6');
+const PianoB6 = document.getElementById('PianoB6');
+const PianoC7 = document.getElementById('PianoC7');
+const PianoD7 = document.getElementById('PianoD7');
+const PianoF7 = document.getElementById('PianoF7');
+const PianoG7 = document.getElementById('PianoG7');
+const PianoA7 = document.getElementById('PianoA7');
+const PianoB7 = document.getElementById('PianoB7');
 
-// document.addEventListener('keyup', (event) => {
-//     const key = event.key.toLowerCase();
-//     const note = keyMap[key];
-//     containerNote.children[[...note.parentNode.children].indexOf(note)].classList.remove('active')
-// })
+const PianoCd5 = document.getElementById('PianoCD5');
+const PianoDd5 = document.getElementById('PianoDD5');
+const PianoFd5 = document.getElementById('PianoFD5');
+const PianoGd5 = document.getElementById('PianoGD5');
+const PianoAd5 = document.getElementById('PianoAD5');
+const PianoCd6 = document.getElementById('PianoCD6');
+const PianoDd6 = document.getElementById('PianoDD6');
+const PianoFd6 = document.getElementById('PianoFD6');
+const PianoGd6 = document.getElementById('PianoGD6');
+const PianoAd6 = document.getElementById('PianoAD6');
+const PianoCd7 = document.getElementById('PianoCD7');
+const PianoDd7 = document.getElementById('PianoDD7');
+const PianoGd7 = document.getElementById('PianoGD7');
+const PianoAd7 = document.getElementById('PianoAD7');
+
+const PianoNotes = [[PianoC5, PianoD5, PianoE5, PianoF5, PianoG5, PianoA5, PianoB5, PianoC6, PianoD6, PianoE6, PianoF6, PianoG6, PianoA6, PianoB6, PianoC7, PianoD7, PianoF7, PianoG7, PianoA7, PianoB7], [PianoCd5, PianoDd5, PianoFd5, PianoGd5, PianoAd5, PianoCd6, PianoDd6, PianoFd6, PianoGd6, PianoAd6, PianoCd7, PianoDd7, PianoGd7, PianoAd7]];
+
+const pianoScreen = document.createElement('div')
+pianoScreen.classList.add('pianoScreen')
+document.body.append(pianoScreen)
+
+const titlePianoScreen = document.createElement('h2')
+titlePianoScreen.textContent = "Piano"
+titlePianoScreen.classList.add('titlePianoScreen')
+pianoScreen.append(titlePianoScreen)
+
+const btnReturnPiano = document.createElement('div')
+btnReturnPiano.textContent = "Retour"
+btnReturnPiano.classList.add('btnRetrun')
+pianoScreen.append(btnReturnPiano)
+
+const mainPianoContainer = document.createElement('div')
+mainPianoContainer.classList.add('mainPianoContainer')
+pianoScreen.append(mainPianoContainer)
+
+const structureLeftPiano = document.createElement('div')
+structureLeftPiano.classList.add('structureLeftPiano')
+mainPianoContainer.append(structureLeftPiano)
+
+const structureRightPiano = document.createElement('div')
+structureRightPiano.classList.add('structureRightPiano')
+mainPianoContainer.append(structureRightPiano)
+
+const structureTopPiano = document.createElement('div')
+structureTopPiano.classList.add('structureTopPiano')
+mainPianoContainer.append(structureTopPiano)
+
+const structureTopBottomNotePiano = document.createElement('div')
+structureTopBottomNotePiano.classList.add('structureTopBottomNotePiano')
+structureTopPiano.append(structureTopBottomNotePiano)
+
+const ecranPiano = document.createElement('div')
+ecranPiano.classList.add('ecranPiano')
+structureTopPiano.append(ecranPiano)
+
+const paraNotePlay = document.createElement('p')
+paraNotePlay.textContent = "Piano"
+paraNotePlay.classList.add('paraNotePlay')
+ecranPiano.append(paraNotePlay)
+
+const containerPianoNote = document.createElement('div')
+containerPianoNote.classList.add('containerPianoNote')
+mainPianoContainer.append(containerPianoNote)
+
+const btnPlayNotePiano = document.createElement('button')
+btnPlayNotePiano.textContent = "Jouer"
+btnPlayNotePiano.classList.add('btnPlay')
+pianoScreen.append(btnPlayNotePiano)
+
+let diesePianoCount = 0
+
+PianoNotes[0].forEach((notePiano) => {
+    const divNotePiano = document.createElement('div')
+    divNotePiano.classList.add('notesPiano')
+
+    containerPianoNote.append(divNotePiano)
+
+    const paraNotePiano = document.createElement('p')
+    const fullId = notePiano.getAttribute('id');
+    const trimmedId = fullId.replace('Piano', '');  
+    paraNotePiano.textContent = trimmedId
+    paraNotePiano.classList.add('paraNotePiano')
+    divNotePiano.append(paraNotePiano)
+
+    divNotePiano.addEventListener('click', () => {
+        notePiano.pause()
+        notePiano.currentTime = 0;
+        notePiano.play();
+        paraNotePlay.textContent = trimmedId
+    });
+
+    btnPlayNotePiano.addEventListener('click', () => {
+
+        paraNotePlay.textContent = `Interstellar`
+
+        for (let i = 0 ; i < 33 ; i++) {
+            setTimeout(() => {
+                PianoNotes[0][0].currentTime = 0
+                PianoNotes[0][0].play()
+                const divNotePlayPiano = document.querySelectorAll('.notesPiano')[0]
+                divNotePlayPiano.classList.add('activePiano')
+                setTimeout(() => {
+                    divNotePlayPiano.classList.remove('activePiano')
+                }, 500)
+            }, i * 700);
+        }
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1500)
+        }, 8400)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 3500)
+        }, 10500)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 14700)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 15400)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 16100)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 16800)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 17500)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 18200)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1500)
+        }, 18900)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1500)
+        }, 21000)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 23100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 23800)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 25100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 25800)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 27100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 27800)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 29100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 29800)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 31100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 31800)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 33100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 33800)
+
+        setTimeout(() => {
+            PianoNotes[0][6].currentTime = 0
+            PianoNotes[0][6].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[6]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 35100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 1100)
+        }, 35800)
+
+        setTimeout(() => {
+            PianoNotes[0][6].currentTime = 0
+            PianoNotes[0][6].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[6]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 37100)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 37800)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 38500)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 39200)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 39900)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 40600);
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 41300);
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 42000)
+
+        setTimeout(() => {
+            PianoNotes[0][3].currentTime = 0
+            PianoNotes[0][3].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[3]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 42700);
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 43400)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 44100);
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 44800)
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 45500)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 46200);
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 46900)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 47600)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 48300);
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 49000)
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 49700)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 50400);
+
+        setTimeout(() => {
+            PianoNotes[0][5].currentTime = 0
+            PianoNotes[0][5].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[5]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 51100)
+
+        setTimeout(() => {
+            PianoNotes[0][6].currentTime = 0
+            PianoNotes[0][6].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[6]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 51800)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 52500);
+
+        setTimeout(() => {
+            PianoNotes[0][6].currentTime = 0
+            PianoNotes[0][6].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[6]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 53200)
+
+        setTimeout(() => {
+            PianoNotes[0][6].currentTime = 0
+            PianoNotes[0][6].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[6]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 53900)
+
+        setTimeout(() => {
+            PianoNotes[0][7].currentTime = 0
+            PianoNotes[0][7].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[7]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 54600);
+
+        setTimeout(() => {
+            PianoNotes[0][4].currentTime = 0
+            PianoNotes[0][4].play()
+            const divNotePlayPiano = document.querySelectorAll('.notesPiano')[4]
+            divNotePlayPiano.classList.add('activePiano')
+            setTimeout(() => {
+                divNotePlayPiano.classList.remove('activePiano')
+            }, 500)
+        }, 55300);
+
+    })
+})
+
+PianoNotes[1].forEach((noteDiesePiano) => {
+    const divNoteDiesePiano = document.createElement('div')
+    divNoteDiesePiano.classList.add('noteDiesePiano')
+    diesePianoCount++
+    divNoteDiesePiano.classList.add(`divNoteDiesePiano${diesePianoCount}`)
+
+    containerPianoNote.append(divNoteDiesePiano)
+
+    const paraNoteDiesePiano = document.createElement('p')
+    const fullId = noteDiesePiano.getAttribute('id');
+    const trimmedId = fullId.replace('Piano', '');  
+    paraNoteDiesePiano.textContent = trimmedId
+    paraNoteDiesePiano.classList.add('paraNoteDiesePiano')
+    divNoteDiesePiano.append(paraNoteDiesePiano)
+
+    divNoteDiesePiano.addEventListener('click', () => {
+        noteDiesePiano.pause()
+        noteDiesePiano.currentTime = 0;
+        noteDiesePiano.play();
+        paraNotePlay.textContent = trimmedId
+    });
+})
+
+// Batterie
+
+const batterieScreen = document.createElement('div')
+batterieScreen.classList.add('batterieScreen')
+document.body.append(batterieScreen)
+
+const titleBatterieScreen = document.createElement('h2')
+titleBatterieScreen.textContent = "Batterie"
+titleBatterieScreen.classList.add('titleBatterieScreen')
+batterieScreen.append(titleBatterieScreen)
+
+const btnReturnBatterie = document.createElement('div')
+btnReturnBatterie.textContent = "Retour"
+btnReturnBatterie.classList.add('btnRetrun')
+batterieScreen.append(btnReturnBatterie)
+
+const mainBatterieContainer = document.createElement('div')
+mainBatterieContainer.classList.add('mainBatterieContainer')
+batterieScreen.append(mainBatterieContainer)
+
+const containerBatterieNote = document.createElement('div')
+containerBatterieNote.classList.add('containerBatterieNote')
+mainBatterieContainer.append(containerBatterieNote)
+
+const China = document.getElementById('China')
+const CrashL = document.getElementById('CrashL')
+const CrashR = document.getElementById('CrashR')
+const HihatClosed = document.getElementById('HihatClosed')
+const HihatOpen = document.getElementById('HihatOpen')
+const KdrumL = document.getElementById('KdrumL')
+const KdrumR = document.getElementById('KdrumR')
+const RideL = document.getElementById('RideL')
+const RideR = document.getElementById('RideR')
+const Snare = document.getElementById('Snare')
+const Tom1 = document.getElementById('Tom1')
+const Tom2 = document.getElementById('Tom2')
+const Tom3 = document.getElementById('Tom3')
+const Tom4 = document.getElementById('Tom4')
+
+const notesBatterie = [China, CrashL, CrashR, HihatClosed, HihatOpen, KdrumL, KdrumR, RideL, RideR, Snare, Tom1, Tom2, Tom3, Tom4]
+
+let dieseBetterieCount = 0
+
+notesBatterie.forEach((noteBatterie) => {
+    const divNoteBatterie = document.createElement('div')
+    divNoteBatterie.classList.add('notesBatterie')
+
+    containerBatterieNote.append(divNoteBatterie)
+    dieseBetterieCount++
+    divNoteBatterie.classList.add(`notesBatterie${dieseBetterieCount}`)
+
+    const paraNoteBatterie = document.createElement('p')
+    paraNoteBatterie.textContent = noteBatterie.getAttribute('id');
+    paraNoteBatterie.classList.add('paraNoteBatterie')
+    divNoteBatterie.append(paraNoteBatterie)
+
+    divNoteBatterie.addEventListener('click', () => {
+        noteBatterie.pause()
+        noteBatterie.currentTime = 0;
+        noteBatterie.play();
+    });
+})
+
+
+const mainContainerWelcome = document.querySelector(".mainContainerWelcome")
+const card1 = document.getElementById('card-1')
+const card2 = document.getElementById('card-2')
+const card3 = document.getElementById('card-3')
+
+card1.addEventListener('click', () => {
+    mainContainerWelcome.style.display = "none"
+    xylophoneScreen.style.display = "block"
+})
+
+card2.addEventListener('click', () => {
+    mainContainerWelcome.style.display = "none"
+    pianoScreen.style.display = "block"
+})
+
+card3.addEventListener('click', () => {
+    mainContainerWelcome.style.display = "none"
+    batterieScreen.style.display = "block"
+})
+
+btnReturnXylo.addEventListener('click', () => {
+    xylophoneScreen.style.display = "none"
+    mainContainerWelcome.style.display = "flex"
+})
+
+btnReturnPiano.addEventListener('click', () => {
+    pianoScreen.style.display = "none"
+    mainContainerWelcome.style.display = "flex"
+})
+
+btnReturnBatterie.addEventListener('click', () => {
+    batterieScreen.style.display = "none"
+    mainContainerWelcome.style.display = "flex"
+})
